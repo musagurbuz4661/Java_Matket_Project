@@ -61,7 +61,11 @@ public class Sepet {
             ad = ad.charAt(0) + ad.replaceAll("\\w", "*");
             soyAd = soyAd.charAt(0) + soyAd.replaceAll("\\w", "*");
 
-            kartNo = kartNo.substring(0, 15).replaceAll("\\d", "*") + kartNo.substring(15, 19);
+            kartNo = kartNo.substring(0,4).replaceAll("\\d","*")+" "+
+                    kartNo.substring(4,8).replaceAll("\\d","*")+" "+
+                    kartNo.substring(8,12).replaceAll("\\d","*")+" "+
+                    kartNo.substring(12,16);
+
 
             System.out.println(ad + " " + soyAd);
             System.out.println("kartNo : " + kartNo);
