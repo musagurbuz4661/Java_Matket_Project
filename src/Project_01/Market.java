@@ -67,11 +67,11 @@ public class Market {
 
                     System.out.println("Baska bir urun almak istermisiniz   Y / N");
                     String secim = scan.next();
-                    if (secim.equals("Y") || secim.equals("y")) {
+                    if (secim.equalsIgnoreCase("Y")) {
                         AnaSayfa.bolumler();
                         urunListesi();
                         urunSec();
-                    } else if (secim.equals("N") || secim.equals("n")) {
+                    } else if (secim.equalsIgnoreCase("N")) {
                         Sepet.sepet();
                         break;
 
