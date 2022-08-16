@@ -52,7 +52,7 @@ public class Sepet {
         String soyAd = scan.nextLine();
         System.out.println("kredi kart no girinizi :");
         String kartNo = scan.nextLine();
-        if (kartNo.length() < 16) {
+        if (kartNo.length() != 16) {
             System.out.println("Kredi karti 16 haneli olmalidir ve her dort numaradan sonra bosluk birakiniz");
             krediKartBilgileri();
         } else {
@@ -64,7 +64,7 @@ public class Sepet {
             kartNo = kartNo.substring(0,4).replaceAll("\\d","*")+" "+
                     kartNo.substring(4,8).replaceAll("\\d","*")+" "+
                     kartNo.substring(8,12).replaceAll("\\d","*")+" "+
-                    kartNo.substring(12,16);
+                    kartNo.substring(12);
 
 
             System.out.println(ad + " " + soyAd);
