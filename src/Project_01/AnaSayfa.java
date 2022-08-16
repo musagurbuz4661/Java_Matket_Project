@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class AnaSayfa {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         bolumler();
     }
-        public static void bolumler() {
+        public static void bolumler() throws InterruptedException {
 
 
         String secim;
@@ -54,7 +54,9 @@ public class AnaSayfa {
                 case "Q":
                     break;
                 default:
-                    System.out.println("lutfen gecerli bir numara giriniz. Eger cikmak isterseniz 'Q' ya basiniz");
+                    System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"lutfen gecerli bir numara giriniz. Eger cikmak isterseniz 'Q' ya basiniz"+Renklendirme.ANSI_RESET);
+                    Thread Tread = null;
+                    Tread.sleep(2000);
             }
         } while (!secim.equalsIgnoreCase("q"));
         Sepet.projeyiDurdur();
