@@ -1,6 +1,7 @@
 package Project_01;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,8 @@ public class Sarkuteri {
     public static double toplamOdenecekPara = 0;
     public static String alinanUrunler = "";
 
+    static Scanner scan = new Scanner(System.in);
+
 
     public static void urunListesi() {
 
@@ -23,7 +26,7 @@ public class Sarkuteri {
 
         String urunler[] = {"Yumurta", "Sucuk", "Peynir", "Zeytin", "Tahin", "Pekmez", "Un", "Seker", "Salca"};
         double urunFiyatlari[] = {2.10, 3.20, 1.50, 2.30, 3.10, 1.20, 1.90, 6.10, 4.30};
-        int UrunNo[] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        int UrunNo[] = { 1, 2, 3, 4, 5, 6, 7, 8,9};
 
         for (int i = 0; i < urunler.length; i++) {
             System.out.printf("  %-3d  %-10s %.2f $\n", UrunNo[i], urunler[i], urunFiyatlari[i]);
@@ -44,9 +47,18 @@ public class Sarkuteri {
 
     public static void urunSec() {
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Lutfen istediginiz urun numarasini giriniz :");
-        int No = scan.nextInt();
+        int No = 0;
+        boolean kontrol = true;
+        while(kontrol) {
+            try {
+                scan = new Scanner(System.in);
+                System.out.println("Lutfen istediginiz urun numarasini giriniz :");
+                No = scan.nextInt();
+                kontrol = false;
+            } catch (InputMismatchException e) {
+                System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"Urun numarasi "+UrunNoListesi.get(0) +" ile "+UrunNoListesi.get(UrunNoListesi.size()-1) +" arasinda olmalidir :"+Renklendirme.ANSI_RESET);
+            }
+        }
         double odencekFiyat = 0;
         if ((No < 0 || No > UrunNoListesi.size() - 1)) {
             System.out.println("Lutfen gecerli bir numara giriniz");
