@@ -50,7 +50,7 @@ public class Market {
     }
 
 
-    public static void urunSec() {
+    public static void urunSec() throws InterruptedException {
 
         int No = 0;
         boolean kontrol = true;
@@ -61,12 +61,13 @@ public class Market {
                 No = scan.nextInt();
                 kontrol = false;
             } catch (InputMismatchException e) {
-                System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"Urun numarasi "+UrunNoListesi.get(0) +" ile "+UrunNoListesi.get(UrunNoListesi.size()-1) +" arasinda olmalidir :"+Renklendirme.ANSI_RESET);
+                System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"Urun numarasi "+UrunNoListesi.get(0) +" ile "+UrunNoListesi.get(UrunNoListesi.size()-1) +" arasinda olmalidir "+Renklendirme.ANSI_RESET);
             }
         }
         double odencekFiyat = 0;
-        if ((No < 0 || No > UrunNoListesi.size() - 1)) {
-            System.out.println("Lutfen gecerli bir numara giriniz");
+        if ((No < 1 || No > UrunNoListesi.size() - 1)) {
+            System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"Urun numarasi "+UrunNoListesi.get(0) +" ile "+UrunNoListesi.get(UrunNoListesi.size()-1) +" arasinda olmalidir "+Renklendirme.ANSI_RESET);
+
             urunSec();
 
         } else {
