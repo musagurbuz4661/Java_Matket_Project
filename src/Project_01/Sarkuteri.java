@@ -20,9 +20,9 @@ public class Sarkuteri {
 
     public static void urunListesi() {
 
-        System.out.println(" ========================");
-        System.out.println("  No    Urun       Fiyat");
-        System.out.println(" ========================");
+        System.out.println(Renklendirme.ANSI_YELLOW+                                   "========================="+Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"  No    Urun       Fiyat "+Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW+                                   "========================="+Renklendirme.ANSI_RESET);
 
         String urunler[] = {"Yumurta", "Sucuk", "Peynir", "Zeytin", "Tahin", "Pekmez", "Un", "Seker", "Salca"};
         double urunFiyatlari[] = {2.10, 3.20, 1.50, 2.30, 3.10, 1.20, 1.90, 6.10, 4.30};
@@ -31,7 +31,7 @@ public class Sarkuteri {
         for (int i = 0; i < urunler.length; i++) {
             System.out.printf("  %-3d  %-10s %.2f $\n", UrunNo[i], urunler[i], urunFiyatlari[i]);
         }
-        System.out.println(" ========================");
+        System.out.println(Renklendirme.ANSI_YELLOW+                                   "========================="+Renklendirme.ANSI_RESET);
 
 
         for (int i = 0; i < urunler.length; i++) {
@@ -65,7 +65,7 @@ public class Sarkuteri {
 
             urunSec();
 
-        } else {
+        }
 
             for (int i = 0; i < UrunNoListesi.size(); i++) {
 
@@ -74,26 +74,33 @@ public class Sarkuteri {
                     double kilogram = scan.nextDouble();
                     odencekFiyat = (kilogram * urunFiyatlariListesi.get(i));
                     toplamOdenecekPara += odencekFiyat;
-                    alinanUrunler += urunListesi.get(i);
+                    alinanUrunler += urunListesi.get(i) +", ";
                     System.out.printf("%.2f kg  %s  %.2f $\n", kilogram, urunListesi.get(i), odencekFiyat);
 
-                    System.out.println("Baska bir urun almak istermisiniz   Y / N");
-                    String secim = scan.next();
-                    if (secim.equals("Y") || secim.equals("y")) {
-                        AnaSayfa.bolumler();
-                        urunListesi();
-                        urunSec();
-                    } else if (secim.equals("N") || secim.equals("n")) {
-                        Sepet.sepet();
-                        break;
 
-                    } else {
-                        System.out.println("Lutfen Y veya N seciniz");
-                        break;
-                    }
+                    boolean flag=true;
+                    while(flag){
+                        System.out.println("Baska bir urun almak istermisiniz   Y / N");
+                        String secim = scan.next();
+                        if (secim.equals("Y") || secim.equals("y")) {
+                            flag=false;
+                            AnaSayfa.bolumler();
+                            urunListesi();
+                            urunSec();
+
+                        } else if (secim.equals("N") || secim.equals("n")) {
+                            flag=false;
+                            Sepet.sepet();
+                            break;
+
+
+
+                        } else {
+                            System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"lutfen 'Y' veya 'N' seciniz"+Renklendirme.ANSI_RESET);
+
+                        }}
                 }
             }
         }
-    }
 }
 

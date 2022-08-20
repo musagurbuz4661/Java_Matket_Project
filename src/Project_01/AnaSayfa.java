@@ -22,7 +22,7 @@ public class AnaSayfa {
 
 
             System.out.println("     MARKET BOLUMLERI    ");
-            System.out.println("=========================");
+            System.out.println(Renklendirme.ANSI_YELLOW+"============================"+Renklendirme.ANSI_RESET);
 
             System.out.println("     01  --- Manav");
             System.out.println("     02  --- Sarkuteri");
@@ -34,7 +34,7 @@ public class AnaSayfa {
             System.out.println(Renklendirme.ANSI_YELLOW+"============================"+Renklendirme.ANSI_RESET);
 
 
-            System.out.println("Hangi bolume gitmek istiyorsaniz numarasini giriniz : ");
+            System.out.println(Renklendirme.ANSI_GREEN+"Hangi bolume gitmek istiyorsaniz numarasini giriniz : "+Renklendirme.ANSI_RESET);
             secim = scan.nextLine();
 
 
