@@ -41,7 +41,9 @@ public class Sepet {
     }
 
     public static void projeyiDurdur() {
-        System.out.println("Basrilli Marketi ziyaret ettiginiz icin Tesekkur ederiz :)");
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"============================================================"+Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+" Basrilli Marketi ziyaret ettiginiz icin Tesekkur ederiz :) "+Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+"============================================================"+Renklendirme.ANSI_RESET);
     }
 
     public static void krediKartBilgileri() {

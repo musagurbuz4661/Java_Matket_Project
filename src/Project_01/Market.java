@@ -72,7 +72,7 @@ public class Market {
 
         } else {
 
-            for (int i = 0; i < UrunNoListesi.size(); i++) {
+            for (int i = No; i < UrunNoListesi.size(); i++) {
 
                 if (No == UrunNoListesi.get(i)) {
                     System.out.println("Kac kilogram almak istiyorsunuz?");

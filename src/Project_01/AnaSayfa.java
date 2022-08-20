@@ -15,22 +15,23 @@ public class AnaSayfa {
 
             Scanner scan = new Scanner(System.in);
 
-            System.out.println(" ==========================");
-            System.out.println(" WELCOME TO BASRILLI MARKET");
-            System.out.println(" ==========================");
+            System.out.println(Renklendirme.ANSI_YELLOW+"============================"+Renklendirme.ANSI_RESET);
+            System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND+Renklendirme.ANSI_BLACK+" WELCOME TO BASRILLI MARKET "+Renklendirme.ANSI_RESET);
+            System.out.println(Renklendirme.ANSI_YELLOW+"============================"+Renklendirme.ANSI_RESET);
+
 
 
             System.out.println("     MARKET BOLUMLERI    ");
-            System.out.println(" ========================");
+            System.out.println("=========================");
 
-            System.out.println(" 01 ---Manav");
-            System.out.println(" 02 ---Sarkuteri");
-            System.out.println(" 03 ---Market");
+            System.out.println("     01  --- Manav");
+            System.out.println("     02  --- Sarkuteri");
+            System.out.println("     03  --- Market");
 
-            System.out.println("\"Q\" ---Cikis");
+            System.out.println("     \"Q\" --- Cikis");
 
 
-            System.out.println(" ========================");
+            System.out.println(Renklendirme.ANSI_YELLOW+"============================"+Renklendirme.ANSI_RESET);
 
 
             System.out.println("Hangi bolume gitmek istiyorsaniz numarasini giriniz : ");
